@@ -54,7 +54,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
               <button
                 type="button"
                 class="close"
@@ -64,7 +64,22 @@
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
-            <div class="modal-body">...</div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-6">
+                  <label>Task Title</label>
+                  <input type="text" id="task-title"></input>
+                </div>
+                <div class="col-6">
+                  <label>Task Due Date</label>
+                  <input type="date" id="datepicker"></input>
+                </div>
+                <div class="d-flex">
+                  <label>Task Description</label>
+                  <textarea id="task-description"></textarea>
+                </div>
+              </div>
+            </div>
             <div class="modal-footer">
               <button
                 type="button"
