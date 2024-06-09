@@ -40,7 +40,19 @@ function createTaskCard(task) {
 
 // Todo: create a function to render the task list and make cards draggable
 function renderTaskList() {
-    // Your code here
+    $(".lane .task-card").remove(); // Clear existing cards
+    $.each(taskList, function(index, task) {
+        let lane = $("#" + task.progress); // Find the lane based on the task's progress
+        let card = createTaskCard(task); // Create card for the task
+        $("#" + task.progress + "-cards").append(card); // Append card to the lane's inner div
+    });
+
+    // Make cards draggable
+    $(".task-card").draggable({
+        revert: "invalid",
+        containment: ".swim-lanes",
+        scroll: false,
+    });
 }
 
 // Todo: create a function to handle adding a new task
