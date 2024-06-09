@@ -57,7 +57,22 @@ function renderTaskList() {
 
 // Todo: create a function to handle adding a new task
 function handleAddTask(event) {
-    // Your code here
+    event.preventDefault();
+    let title = $("#task-title").val();
+    let description = $("#task-description").val();
+    let deadline = $("#datepicker").val();
+    let id = generateTaskId(); // Generate unique id for the task
+    let newTask = {
+        id: id,
+        title: title,
+        description: description,
+        deadline: deadline,
+        progress: "to-do", // Initial progress state
+    };
+    taskList.push(newTask); // Add new task to the task list
+    localStorage.setItem("tasks", JSON.stringify(taskList)); // Save task list to localStorage
+    renderTaskList(); // Render updated task list
+    $("#formModal").modal("hide"); // Hide modal after adding task
 }
 
 // Todo: create a function to handle deleting a task
