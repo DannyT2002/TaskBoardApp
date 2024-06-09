@@ -5,12 +5,14 @@ This project is a simple Kanban board for task management. It allows users to ad
 
 ## Deployed Page Screenshot
 
-![Screenshot of Deployed Application](./Assets/images/Employee%20Payroll%20Tracker%20-%20Google%20Chrome%203_24_2024%207_46_26%20PM.png)
+![Screenshot of Deployed Application](./Assets/images/Task%20Board%201-2.png)
+![Screenshot of Deployed Application](./Assets/images/Task%20Board%202-2.png)
+
 
 ### Links
 
-[Link to Deployed Website](https://dannyt2002.github.io/employeePayrollTracker/)
+[Link to Deployed Website](https://dannyt2002.github.io/TaskBoardApp/)
 
-[Link to the code repository](https://github.com/DannyT2002/employeePayrollTracker)
+[Link to the code repository](https://github.com/DannyT2002/TaskBoardApp)
 
 
