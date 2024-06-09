@@ -11,7 +11,31 @@ function generateTaskId() {
 }
 // Todo: create a function to create a task card
 function createTaskCard(task) {
-    // Your code here
+    let card = $('<div>').addClass('card task-card').attr('id', task.id);
+    let cardBody = $('<div>').addClass('card-body');
+    let title = $('<h5>').addClass('card-title').text(task.title);
+    let description = $('<p>').addClass('card-text').text(task.description);
+    let deadline = $('<p>').addClass('card-text').text('Deadline: ' + task.deadline);
+
+    // Calculate due date status
+    let dueDate = new Date(task.deadline);
+    let currentDate = new Date();
+    let today = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate()); // Set today's date without time
+
+    if (dueDate < today && (task.progress === "to-do" || task.progress === "in-progress")) {
+        card.css('background-color', 'maroon');
+        card.css('color', 'white')
+    } else if (dueDate.getTime() === today.getTime() && (task.progress === "to-do" || task.progress === "in-progress")) {
+        card.css('background-color', '#FFDB58');
+        card.css('color', 'white')
+    } else if (dueDate > today && (task.progress === "to-do" || task.progress === "in-progress")) {
+        card.css('background-color', 'white');
+    }
+
+    let deleteBtn = $('<button>').addClass('btn btn-danger delete-btn').text('Delete').click(handleDeleteTask);
+    cardBody.append(title, description, deadline, deleteBtn);
+    card.append(cardBody);
+    return card; // Just return the card, don't wrap it in a container
 }
 
 // Todo: create a function to render the task list and make cards draggable
