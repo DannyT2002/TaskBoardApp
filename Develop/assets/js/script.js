@@ -85,8 +85,13 @@ function handleDeleteTask(event) {
 
 // Todo: create a function to handle dropping a task into a new status lane
 function handleDrop(event, ui) {
-    // Your code here
-}
+    let taskId = ui.draggable.attr("id");
+    let newLaneId = $(this).attr("id");
+    let taskIndex = taskList.findIndex((task) => task.id === taskId);
+    taskList[taskIndex].progress = newLaneId; // Update task's progress
+    localStorage.setItem("tasks", JSON.stringify(taskList)); // Save task list to localStorage
+    renderTaskList(); // Render updated task list
+} 
 
 // Todo: when the page loads, render the task list, add event listeners, make lanes droppable, and make the due date field a date picker
 $(document).ready(function () {
