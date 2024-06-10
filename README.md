@@ -5,8 +5,8 @@ This project is a simple Kanban board for task management. It allows users to ad
 
 ## Deployed Page Screenshot
 
-![Screenshot of Deployed Application](./Assets/images/Task%20Board%201-2.png)
-![Screenshot of Deployed Application](./Assets/images/Task%20Board%202-2.png)
+![Screenshot of Deployed Application](./assets/images/Task%20Board%201-2.png)
+![Screenshot of Deployed Application](./assets/images/Task%20Board%202-2.png)
 
 
 ### Links
